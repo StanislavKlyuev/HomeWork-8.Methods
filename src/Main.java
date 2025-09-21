@@ -24,7 +24,7 @@ public class Main {
         В результате программа должна выводить в консоль сообщение, какую версию приложения (обычную или облегченную)
         и для какой ОС (Android или iOS) установить пользователю.*/
 
-        int clientOS = 1;
+        int clientOS = 0;
         int yearPhone = 2016;
         printSettingMessage(clientOS, yearPhone);
         System.out.println();
@@ -55,16 +55,16 @@ public class Main {
 
 
     public static void printSettingMessage(int os, int year) {
+        String operationSystem;
         if (os == 0) {
-            if (year > 2015)
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            else
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            operationSystem = "iOS";
         } else {
-            if (year > 2015)
-                System.out.println("Установите версию приложения для Android по ссылке");
-            else
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+            operationSystem = "Android";
+        }
+        if (year > 2015) {
+            System.out.println("Установите версию приложения для " + operationSystem + " по ссылке");
+        } else {
+            System.out.println("Установите облегченную версию приложения для " + operationSystem + " по ссылке");
         }
     }
 
